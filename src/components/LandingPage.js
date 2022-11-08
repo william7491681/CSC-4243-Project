@@ -1,7 +1,7 @@
 export default function LandingPage() {
     return (
-        <div>
-            <h1 id="code">Landing Page Test</h1>
+        <div className="justify-center">
+            <h1>Landing Page Test</h1>
         </div>
     )
 }
