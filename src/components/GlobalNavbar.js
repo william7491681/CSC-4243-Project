@@ -11,6 +11,7 @@ export default function GlobalNavbar() {
     const [numNotifs, setNumNotifs] = useState(0);
 
     return (
+        <>
         <div>
             <div className="bg-center bg-zinc-300 flex justify-between">
             {/* mt-[30px] ml-[20px]  */}
@@ -35,11 +36,12 @@ export default function GlobalNavbar() {
                     </nav> */}
             </div>
             {/* "bg-zinc-300 px-0 w-48 font-semibold text-center" */}
-            <ul className={!nav ? "hidden" : "bg-zinc-300 px-0 w-48 font-semibold text-center"}>
-                <li className="border-b-4 border-white"><Link to="/Profile">Profile Page</Link></li>
-                <li className="border-white"><Link to="/randomurl">Route to nowhere</Link></li>
+            <ul className={!nav ? "hidden" : "bg-zinc-300 absolute bg-zinc-300 px-0 w-48 font-semibold text-center z-50"}>
+                <li className="border-t-4 border-white"><Link to="/Profile">Profile Page</Link></li>
+                <li className="border-t-4 border-b-4 border-white"><Link to="/randomurl">Route to nowhere</Link></li>
             </ul>
-            <Outlet />
         </div>
+        <Outlet />
+        </>
     )
 }

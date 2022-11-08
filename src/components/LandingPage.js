@@ -1,7 +1,13 @@
+import Card from "./Card"
+
 export default function LandingPage() {
+
     return (
-        <div className="justify-center">
-            <h1>Landing Page Test</h1>
+        <div className="text-center">
+            {/* show cards with */}
+            <Card>
+                Test I suppose
+            </Card>
         </div>
     )
 }
