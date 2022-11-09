@@ -24,20 +24,9 @@ export default function GlobalNavbar() {
                 <div className="cursor-pointer ml-[20px] mt-[30px]">
                     <BellIcon className={!numNotifs ? "w-12 mr-11 fill-white" : "w-12 mr-11 fill-red-600"}/>
                 </div>
-                    {/* <nav>
-                        <ul className="">
-                            <li>
-                                <Link to="/Profile">Profile Page</Link>
-                            </li>
-                            <li>
-                                <Link to="/randomurl">Route to nowhere</Link>
-                            </li>
-                        </ul>
-                    </nav> */}
             </div>
-            {/* "bg-zinc-300 px-0 w-48 font-semibold text-center" */}
-            <ul className={!nav ? "hidden" : "bg-zinc-300 absolute bg-zinc-300 px-0 w-48 font-semibold text-center z-50"}>
-                <li className="border-t-4 border-white"><Link to="/Profile">Profile Page</Link></li>
+            <ul className={!nav ? "hidden" : "absolute bg-zinc-300 px-0 w-48 font-semibold text-center z-50"}>
+                <li className="border-t-4 border-white w-full"><Link to="/Profile" className="px-10">Profile Page</Link></li>
                 <li className="border-t-4 border-b-4 border-white"><Link to="/randomurl">Route to nowhere</Link></li>
             </ul>
         </div>
