@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import '../index.css';
-import { MenuIcon, XIcon, BellIcon } from '@heroicons/react/outline'
+import { MenuIcon, XIcon, BellIcon} from '@heroicons/react/outline'
 import { useState } from "react";
 
 export default function GlobalNavbar() {
@@ -8,7 +8,7 @@ export default function GlobalNavbar() {
     const [nav, setNav] = useState(false);
     const handleHamburgerClick = () => {setNav(!nav)};
 
-    const [numNotifs, setNumNotifs] = useState(0);
+    const [notifs, setNotifs] = useState([]);
 
     return (
         <>
@@ -22,7 +22,7 @@ export default function GlobalNavbar() {
                     <Link to="/">Help Quest</Link>
                 </nav>
                 <div className="cursor-pointer ml-[20px] mt-[30px]">
-                    <BellIcon className={!numNotifs ? "w-12 mr-11 fill-white" : "w-12 mr-11 fill-red-600"}/>
+                    <BellIcon className={!notifs.length ? "w-12 mr-11 fill-white" : "w-12 mr-11 fill-red-600"}/>
                 </div>
             </div>
             <ul className={!nav ? "hidden" : "absolute bg-zinc-300 px-0 w-48 font-semibold text-center z-50"}>

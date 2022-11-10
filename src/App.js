@@ -8,7 +8,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* inherits from globalnavbar */}
+        {/* all pages inherit globalnavbar */}
         <Route path="/" element={<GlobalNavbar />}>
           <Route index element={<LandingPage />} />
           <Route path="Profile" element={<Profile />} />

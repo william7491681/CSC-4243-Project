@@ -1,8 +1,14 @@
+import { useState } from "react"
+
 export default function Profile() {
+
+    const [publishedQuests, setPublishedQuests] = useState([]);
+    const [acceptedQuests, setAcceptedQuests] = useState([]);
+
     return (
-        <div className="text-center">
-            <h1>
-                This is a profile
+        <div>
+            <h1 className="absolute bottom-0">
+                test
             </h1>
         </div>
     )
