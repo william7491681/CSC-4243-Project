@@ -2,8 +2,14 @@ import { Outlet, Link } from "react-router-dom";
 import '../index.css';
 import { MenuIcon, XIcon, BellIcon} from '@heroicons/react/outline'
 import { useState } from "react";
+import {auth} from "../firebase"
+import {useAuthState} from "react-firebase-hooks/auth"
+import SignIn from "./SignIn";
+import LogOut from "./LogOut";
 
 export default function GlobalNavbar() {
+
+    const [user] = useAuthState(auth);
 
     const [nav, setNav] = useState(false);
     const handleHamburgerClick = () => {setNav(!nav)};
@@ -25,7 +31,10 @@ export default function GlobalNavbar() {
                     <BellIcon className={!notifs.length ? "w-12 mr-11 fill-white" : "w-12 mr-11 fill-red-600"}/>
                 </div>
             </div>
-            <ul className={!nav ? "hidden" : "absolute bg-zinc-300 px-0 w-48 font-semibold text-center z-50"}>
+            <ul className={!nav ? "hidden" : "absolute bg-zinc-300 px-0 w-64 font-semibold text-center z-50"}>
+                {!user ?
+                <li className="border-t-4 border-white w-full"><SignIn /></li> :
+                <li className="border-t-4 border-white w-full"><LogOut /></li>}
                 <li className="border-t-4 border-white w-full"><Link to="/Profile" className="px-10">Profile Page</Link></li>
                 <li className="border-t-4 border-b-4 border-white"><Link to="/randomurl">Route to nowhere</Link></li>
             </ul>
