@@ -3,7 +3,8 @@ import { auth, db } from "../firebase"
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import GoogleButton from "react-google-button"
 import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const googleSignIn = () => {
     const provider = new GoogleAuthProvider()
@@ -25,16 +26,15 @@ export default function RequestForm() {
     const [type, setType] = useState("")
     const [deadline, setDeadline] = useState("")
 
-    const sendData = async (e) => {
-        const d = {
-            title: title,
-            description: description,
-            time: time,
-            type: type,
-            deadline: deadline
-        }
-        console.log(d);
 
+    const navigate = useNavigate();
+
+    const goBackToHomePage = () => {
+        navigate("/profile")
+        navigate("/")
+    }
+
+    const sendData = async (e) => {
         e.preventDefault()
         const {uid, displayName} = auth.currentUser;
         await addDoc(collection(db, "HelpQuests"), {
@@ -44,8 +44,10 @@ export default function RequestForm() {
             type: type,
             deadline: deadline,
             uid: uid,
-            creator: displayName
-        })
+            creator: displayName,
+            acceptor: null
+        });
+        goBackToHomePage();
     }
 
     return (
@@ -59,24 +61,25 @@ export default function RequestForm() {
                 </div>
                 <div>
                     <h2 className={style.label}> Title </h2>
-                    <textarea value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ex: I need help studying for an algebra exam" rows="1" cols="75" className={style.input}></textarea>
+                    <textarea value={title} required onChange={(e) => setTitle(e.target.value)} placeholder="Ex: I need help studying for an algebra exam" rows="1" cols="75" className={style.input}></textarea>
                 </div>
                 <div>
                 <h2 className={style.label}> Description </h2>
-                    <textarea value={description} onChange={(e) => {setDescription(e.target.value)}}  placeholder="Ex: I am struggling to remember the unit circle" rows="1" cols="75" className={style.input}></textarea>
+                    <textarea value={description} required onChange={(e) => {setDescription(e.target.value)}}  placeholder="Ex: I am struggling to remember the unit circle" rows="1" cols="75" className={style.input}></textarea>
                 </div>
                 <div>
                 <h2 className={style.label}> Estimated Time to Completion </h2>
-                    <textarea value={time} onChange={(e) => {setTime(e.target.value)}}  placeholder="Ex: 2 Hours" rows="1" cols="75" className={style.input}></textarea>
+                    <textarea value={time} required onChange={(e) => {setTime(e.target.value)}}  placeholder="Ex: 2 Hours" rows="1" cols="75" className={style.input}></textarea>
                 </div>
                 <div>
-                <h2 className={style.label}> Deadline Date </h2>
-                    <textarea value={deadline} onChange={(e) => {setDeadline(e.target.value)}}  placeholder="Ex: 12/12/2022" rows="1" cols="75" className={style.input}></textarea>
+                    <h2 className={style.label}> Deadline Date </h2>
+                    <input type="date" value={deadline} required onChange={(e) => {setDeadline(e.target.value)}} placeholder="Ex: 12/12/2022" className={style.input} />
+                    {/* <textarea value={deadline} onChange={(e) => {setDeadline(e.target.value)}}  placeholder="Ex: 12/12/2022" rows="1" cols="75" className={style.input}></textarea> */}
                 </div>
                 <div>
                 <h2 className={style.label}> Help Quest Type </h2>
                     {/* <option value={type}></option> */}
-                    <textarea value={type} onChange={(e) => {setType(e.target.value)}}  placeholder="Test" rows="1" cols="75" className={style.input}></textarea>
+                    <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Test" rows="1" cols="75" className={style.input}></textarea>
                 </div>
                 <button type="submit">Submit</button>
             </form> :

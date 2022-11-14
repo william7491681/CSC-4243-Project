@@ -13,8 +13,13 @@ export default function LandingPage() {
         const q = query(collection(db, "HelpQuests"))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             let cards = [];
+            let data = {};
             querySnapshot.forEach((card) => {
-                cards.push({...card.data(), id: card.id})
+                data = {...card.data()}
+                data.id = card.id;
+                if (!data.acceptor) {
+                    cards.push(data)
+                }
             })
             setCards(cards);
         })
@@ -27,18 +32,21 @@ export default function LandingPage() {
     }
 
     return (
-        <div className="bg-gray-600 h-screen">
+        <div className="bg-gray-600 min-h-screen h-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 { cards && cards.map((card) => {
+                    let id = card.id
                     return (
                         <Card
                         key={card.id}
+                        id={id}
                         title={card.title}
                         time={card.time}
                         type={card.type}
-                        deadline={card.deadline}
+                        deadline={new Date(card.deadline).toLocaleDateString()}
                         description={card.description}
                         creator={card.creator}
+                        acceptor={card.acceptor}
                         />
                     );
                 })}
