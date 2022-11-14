@@ -1,9 +1,9 @@
-import { useState } from "react"
+// import { useState } from "react"
 
 export default function Profile() {
 
-    const [publishedQuests, setPublishedQuests] = useState([]);
-    const [acceptedQuests, setAcceptedQuests] = useState([]);
+    // const [publishedQuests, setPublishedQuests] = useState([]);
+    // const [acceptedQuests, setAcceptedQuests] = useState([]);
 
     return (
         <div>

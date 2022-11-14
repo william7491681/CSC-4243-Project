@@ -2,108 +2,10 @@ import Card from "./Card"
 import { useEffect, useState } from "react";
 import { PencilAltIcon, XIcon } from '@heroicons/react/outline'
 import RequestForm from "./RequestForm";
-import { collection, doc, onSnapshot, query } from "firebase/firestore";
+import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function LandingPage() {
-
-    // const [cards, setCards] = useState([{
-    //     title: "I need help with derivatives in calculus",
-    //     topic: "Test",
-    //     time: "5 hours",
-    //     type: "Math",
-    //     deadline: "11/25/2022",
-    //     id: "1"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "2"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "3"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "4"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "5"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "6"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "7"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "8"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "9"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "10"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "11"
-    //     },
-    //     {
-    //         title: "I need help with derivatives in calculus",
-    //         topic: "Test",
-    //         time: "5 hours",
-    //         type: "Math",
-    //         deadline: "11/25/2022",
-    //         id: "12"
-    //     }
-    // ])
 
     const [cards, setCards] = useState([])
 
@@ -135,6 +37,8 @@ export default function LandingPage() {
                         time={card.time}
                         type={card.type}
                         deadline={card.deadline}
+                        description={card.description}
+                        creator={card.creator}
                         />
                     );
                 })}

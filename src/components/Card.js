@@ -1,4 +1,4 @@
-export default function Card({title, time, type, deadline, id}) {
+export default function Card({title, time, type, deadline}) {
     return (
         <div className="w-72 m-4 mt-6 bg-white lg:max-w-lg shadow-2xl shadow-gray-900 rounded-t-xl rounded-b-xl">
             <div className="text-center text-gray-600">
