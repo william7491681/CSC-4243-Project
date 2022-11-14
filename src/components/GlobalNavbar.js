@@ -36,8 +36,7 @@ export default function GlobalNavbar() {
                 <li className="border-t-4 border-white w-full"><SignIn /></li> :
                 <li className="border-t-4 border-white w-full"><LogOut /></li>}
                 
-                <li className="border-t-4 border-white w-full"><Link to="/Profile" className="px-10">Profile Page</Link></li>
-                <li className="border-t-4 border-b-4 border-white"><Link to="/randomurl">Route to nowhere</Link></li>
+                <li className="border-t-4 border-b-4 border-white w-full"><Link to="/Profile" className="px-10">Profile Page</Link></li>
             </ul>
             {nav ?
             <div className="absolute top-0 bottom-0 right-0 left-0 bg-transparent z-10" onClick={() => setNav(false)}/> :

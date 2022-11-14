@@ -6,10 +6,8 @@ export default function Profile() {
     // const [acceptedQuests, setAcceptedQuests] = useState([]);
 
     return (
-        <div className="h-screen">
-            <h1 className="absolute bottom-0">
-                test
-            </h1>
+        <div className="bg-gray-600 min-h-screen h-full">
+            
         </div>
     )
 }
