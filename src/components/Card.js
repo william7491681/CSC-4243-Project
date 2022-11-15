@@ -44,7 +44,7 @@ export default function Card(props) {
                     </p>
                 </div>
                 <div className="grid font-bold pl-3 grid-cols-2 text-left border-b-2">
-                    Quest Type: {" "}
+                    Quest Category: {" "}
                     <p className="ml-1 font-normal text-center">
                         {props.type}
                     </p>

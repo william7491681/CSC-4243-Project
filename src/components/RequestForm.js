@@ -77,9 +77,9 @@ export default function RequestForm() {
                     {/* <textarea value={deadline} onChange={(e) => {setDeadline(e.target.value)}}  placeholder="Ex: 12/12/2022" rows="1" cols="75" className={style.input}></textarea> */}
                 </div>
                 <div>
-                <h2 className={style.label}> Help Quest Type </h2>
+                <h2 className={style.label}> Quest Category </h2>
                     {/* <option value={type}></option> */}
-                    <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Test" rows="1" cols="75" className={style.input}></textarea>
+                    <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Math" rows="1" cols="75" className={style.input}></textarea>
                 </div>
                 <button type="submit">Submit</button>
             </form> :
