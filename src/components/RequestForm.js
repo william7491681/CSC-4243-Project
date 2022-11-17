@@ -14,7 +14,7 @@ const googleSignIn = () => {
 export default function RequestForm() {
 
     const style = {
-        input : "my-2 p-2 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
+        input : "my-0 p-0 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
         label : "text-3xl text-zinc-200 font-semibold mt-5"
     }
 
@@ -81,7 +81,7 @@ export default function RequestForm() {
                     {/* <option value={type}></option> */}
                     <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Math" rows="1" cols="75" className={style.input}></textarea>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className="bg-zinc-600 rounded-sm py-1 px-3 mt-4 hover:bg-zinc-400 focus:ring focus:ring-blue-ring">Submit</button>
             </form> :
             <div className="grid grid-rows-2 text-center content-center fixed h-full w-full backdrop-blur-3xl">
                 <h1 className="py-6 text-6xl font-bold ">

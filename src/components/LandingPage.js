@@ -56,7 +56,8 @@ export default function LandingPage() {
             </div>
             {showRequestForm && <RequestForm />}
             <div className="flex rounded-xl shadow-lg shadow-black
-            fixed bottom-[50px] right-[50px] w-[300px] bg-zinc-300 cursor-pointer"
+            fixed bottom-[50px] right-[50px] w-[300px] bg-zinc-400 cursor-pointer
+            hover:bg-zinc-300"
             onClick={handleCreateQuestClick}>
                 {!showRequestForm ?
                 <PencilAltIcon className="h-[60px] self-center place-self-center" />:

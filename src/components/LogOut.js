@@ -8,6 +8,6 @@ export default function LogOut() {
     }
 
     return (
-        <button onClick={() => auth.signOut()} className="bg-gray-300 px-4 py-2 hover:bg-gray-100"> Log Out </button>
+        <button onClick={() => auth.signOut()} className=" px-6 py-2"> Log Out </button>
     )
 }
