@@ -12,21 +12,25 @@ export default function Card(props) {
 
     const acceptQuest = async (e) => {
         e.preventDefault();
-        const uid = auth.currentUser.uid;
-        console.log(props.id);
-        const data = {
-            title: props.title,
-            time: props.time,
-            type: props.type,
-            deadline: props.deadline,
-            description: props.description,
-            creator: props.creator,
-            acceptor: uid
+        if(auth.currentUser.uid !== props.creator){
+            const uid = auth.currentUser.uid;
+            console.log(props.id);
+            const data = {
+                title: props.title,
+                time: props.time,
+                type: props.type,
+                deadline: props.deadline,
+                description: props.description,
+                creator: props.creator,
+                acceptor: uid
+            }
+            console.log("got here")
+            const ref = doc(db, "HelpQuests", props.id);
+            await setDoc(ref, {acceptor:uid}, {merge:true});
         }
+        
         // change acceptor to current user's uid
-        console.log("got here")
-        const ref = doc(db, "HelpQuests", props.id);
-        await setDoc(ref, {acceptor:uid}, {merge:true});
+        
     }
 
     return (

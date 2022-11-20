@@ -43,11 +43,11 @@ export default function Profile() {
     }, []);
 
     return (
-        <div className="fixed bg-gray-600 min-h-screen w-full">
+        <div className="bg-gray-600 min-h-screen w-full">
             {user ?
             <div className="grid grid-rows-2">
                 <div className="flex flex-col overflow-x-auto items-start">
-                    <p className="flex fixed w-full justify-center text-3xl text-opacity-80 text-white">
+                    <p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
                         Accepted
                     </p>
                     <div className="grid mt-5 grid-flow-col">
@@ -70,7 +70,7 @@ export default function Profile() {
                     </div>
                 </div>
                 <div className="flex flex-col overflow-x-auto items-start">
-                    <p className="flex fixed w-full justify-center text-3xl text-opacity-80 text-white">
+                    <p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
                         Created
                     </p>
                     <div className="grid mt-5 grid-flow-col">

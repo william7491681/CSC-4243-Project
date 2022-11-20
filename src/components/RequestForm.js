@@ -14,7 +14,7 @@ const googleSignIn = () => {
 export default function RequestForm() {
 
     const style = {
-        input : "my-0 p-0 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
+        input : "my-2 p-2 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
         label : "text-3xl text-zinc-200 font-semibold mt-5"
     }
 
@@ -30,8 +30,9 @@ export default function RequestForm() {
     const navigate = useNavigate();
 
     const goBackToHomePage = () => {
-        navigate("/profile")
-        navigate("/")
+        
+        window.location.reload();
+        
     }
 
     const sendData = async (e) => {
