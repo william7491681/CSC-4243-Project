@@ -7,6 +7,7 @@ import {useAuthState} from "react-firebase-hooks/auth"
 import SignIn from "./SignIn";
 import LogOut from "./LogOut";
 import Logo from './images/Help_Quest_Icon.png'
+//const nodemailer = require('nodemailer');
 
 export default function GlobalNavbar() {
 

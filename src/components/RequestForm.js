@@ -15,7 +15,7 @@ const googleSignIn = () => {
 export default function RequestForm() {
 
     const style = {
-        input : "my-2 p-2 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
+        input : "my-0 p-0 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
         label : "text-3xl text-zinc-200 font-semibold mt-5"
     }
 
@@ -61,7 +61,7 @@ export default function RequestForm() {
     return (
         <div className="absolute h-screen w-full top-0 left-0 text-center">
             {user ?
-            <form className=" h-full fixed w-full backdrop-blur-3xl" onSubmit={sendData}>
+            <form className="fixed h-full w-full backdrop-blur-3xl" onSubmit={sendData}>
                 <div>
                     <h1 className="py-6 text-6xl font-bold bg-zinc-300">
                         CREATE HELP QUEST
