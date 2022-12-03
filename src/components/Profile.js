@@ -1,9 +1,10 @@
 import Card from "./Card"
 import { useEffect, useState } from "react";
-import { collection, onSnapshot, query } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { Outlet, Link } from "react-router-dom";
 import GoogleButton from "react-google-button"
 
 const googleSignIn = () => {
@@ -22,7 +23,7 @@ export default function Profile() {
     }
 
     useEffect(() => {
-        const q = query(collection(db, "HelpQuests"))
+        const q = query(collection(db, "HelpQuests"),  orderBy("deadline","asc"))
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             let acceptedQuests = [];
             let publishedQuests = [];
@@ -98,7 +99,7 @@ export default function Profile() {
                 <h1 className="py-6 text-6xl font-bold">
                     Sign in to view profile page
                 </h1>
-                <GoogleButton onClick={googleSignIn}/>
+                <Link to="/SignUp" className="px-10">SignIn</Link>
             </div>}
         </div>
     )

@@ -2,7 +2,7 @@ import Card from "./Card"
 import { useEffect, useState } from "react";
 import { PencilAltIcon, XIcon } from '@heroicons/react/outline'
 import RequestForm from "./RequestForm";
-import { collection, onSnapshot, query } from "firebase/firestore";
+import { collection, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { db } from "../firebase";
 
 export default function LandingPage() {
@@ -10,7 +10,7 @@ export default function LandingPage() {
     const [cards, setCards] = useState([])
 
     useEffect(() => {
-        const q = query(collection(db, "HelpQuests"))
+        const q = query(collection(db, "HelpQuests"), orderBy("deadline","asc"));
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
             let cards = [];
             let data = {};

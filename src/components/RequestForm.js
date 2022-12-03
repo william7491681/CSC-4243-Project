@@ -5,6 +5,7 @@ import GoogleButton from "react-google-button"
 import { useState } from "react";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 const googleSignIn = () => {
     const provider = new GoogleAuthProvider()
@@ -25,9 +26,11 @@ export default function RequestForm() {
     const [time, setTime] = useState("")
     const [type, setType] = useState("")
     const [deadline, setDeadline] = useState("")
-
+    const [temp, setTemp] = useState("")
+    
 
     const navigate = useNavigate();
+    const reput = /[-]/g;
 
     const goBackToHomePage = () => {
         
@@ -46,15 +49,19 @@ export default function RequestForm() {
             deadline: deadline,
             uid: uid,
             creator: displayName,
-            acceptor: null
+            acceptor: null,
+
+            
         });
+
         goBackToHomePage();
+        
     }
 
     return (
         <div className="absolute h-screen w-full top-0 left-0 text-center">
             {user ?
-            <form className="fixed h-full w-full backdrop-blur-3xl" onSubmit={sendData}>
+            <form className=" h-full fixed w-full backdrop-blur-3xl" onSubmit={sendData}>
                 <div>
                     <h1 className="py-6 text-6xl font-bold bg-zinc-300">
                         CREATE HELP QUEST
@@ -82,13 +89,13 @@ export default function RequestForm() {
                     {/* <option value={type}></option> */}
                     <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Math" rows="1" cols="75" className={style.input}></textarea>
                 </div>
-                <button type="submit" className="bg-zinc-600 rounded-sm py-1 px-3 mt-4 hover:bg-zinc-400 focus:ring focus:ring-blue-ring">Submit</button>
+                <button type="submit" className="rounded-xl shadow-lg text-[30px] shadow-black fixed bottom-[50px] left-[50px] w-[300px] bg-zinc-400 cursor-pointer hover:bg-zinc-300 focus:ring focus:ring-blue-ring">Submit</button>
             </form> :
-            <div className="grid grid-rows-2 text-center content-center fixed h-full w-full backdrop-blur-3xl">
+            <div className="grid grid-rows-2 text-center content-center h-full w-full backdrop-blur-3xl">
                 <h1 className="py-6 text-6xl font-bold ">
                     Sign in to create Help Quest
                 </h1>
-                <GoogleButton className="justify-self-center" onClick={googleSignIn}/>
+                <Link to="/SignUp" className="px-10">SignIn</Link>
             </div>
 }
         </div>
