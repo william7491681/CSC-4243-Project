@@ -1,12 +1,6 @@
-import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
-import { auth } from "../firebase";
-import GoogleButton from "react-google-button";
 import emailjs from "emailjs-com";
 
-const googleSignIn = () => {
-    const provider = new GoogleAuthProvider()
-    signInWithRedirect(auth, provider)
-}
+
 
 export default function ContactUs() {
     function sendEmail(e){
@@ -21,30 +15,33 @@ export default function ContactUs() {
           e.target.reset()
       }
     return (
+       <div className="bg-orange-600">
        <div>
-       <div>
-        <h1>
-            I am going to write a nice essay here later.
+        <h1 className ="text-yellow-100">
+            Contact the people you accepted.
         </h1>
-        <GoogleButton onClick={googleSignIn}/>
        </div>
        <div className="container">
     <form onSubmit={sendEmail}>
       <div className="row pt-5 mx-auto">
-        <div className="col-8 form-group mx-auto">
-          <input type="text" className="form-control" placeholder="Name" name="name"></input>
+        <div className="col-10 form-group mx-auto pl-3">
+          <input type="text" className="form-control border-2 border-amber-500 bg-yellow-100" placeholder="Your Name" name="name" required></input>
         </div>
-        <div className="col-8 form-group pt-2 mx-auto">
-          <input type="text" className="form-control" placeholder="Email Address" name="email"></input>
+        <div className="col-10 form-group pt-2 mx-auto pl-3">
+          <select name="email" className="form-control border-2 border-amber-500 bg-yellow-100" label="Email Address" placeholder="" required>
+            <option label="Email Address"></option>
+            <option label="Ivar Bega Stem">ivarbegastem@gmail.com</option>
+            <option label="Ravi Stimphil">ravistimphil@gmail.com</option>
+          </select>
         </div>
-        <div className="col-8 form-group pt-2 mx-auto">
-          <input type="text" className="form-control" placeholder="Subject" name="subject"></input>
+        <div className="col-10 form-group pt-2 mx-auto pl-3">
+          <input type="text" className="form-control border-2 border-amber-500 bg-yellow-100" placeholder="Subject" name="subject" required></input>
         </div>
-        <div className="col-8 form-group pt-2 mx-auto">
-          <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
+        <div className="col-10 form-group pt-2 mx-auto pl-3">
+          <textarea className="form-control border-2 border-amber-500 bg-yellow-100" id="" cols="30" rows="8" placeholder="Your message" name="message" required></textarea>
         </div>
-        <div className="col-8 pt-3 mx-auto">
-          <input type="submit" className="btn btn-info" value="Send Message" ></input>
+        <div className="col-10 pt-3 mx-auto p-3">
+          <input type="submit" className="btn btn-info cursor-pointer bg-amber-500 p-3 hover:bg-amber-300" value="Send Message" ></input>
         </div>
       </div>
     </form>

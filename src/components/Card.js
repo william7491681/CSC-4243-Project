@@ -34,32 +34,32 @@ export default function Card(props) {
     }
 
     return (
-        <div className="w-72 m-4 mt-6 h-[168px] bg-white lg:max-w-lg shadow-2xl shadow-gray-900 rounded-t-xl rounded-b-xl">
+        <div className="w-72 m-4 mt-6 h-[168px] bg-yellow-100 lg:max-w-lg shadow-2xl shadow-gray-800 rounded-t-xl rounded-b-xl">
             {!showAccept ?
             // Ternary operator first section
             <div className="text-center text-gray-600 h-full">
-                <h3 className="text-black text-2xl h-16 font-bold bg-gray-300 overflow-y-auto overflow-x-hidden rounded-t-xl">
+                <h3 className="text-black text-2xl h-16 font-bold bg-amber-300 overflow-y-auto overflow-x-hidden rounded-t-xl">
                     {props.title}
                 </h3>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-b-2 h-[26px]">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-amber-300 border-b-2 h-[26px]">
                     Completion Time: {" "}
                     <p className="ml-1 font-normal flex justify-center text-center overflow-auto">
                         {props.time}
                     </p>
                 </div>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-b-2">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-amber-300 border-b-2">
                     Quest Category: {" "}
                     <p className="ml-1 font-normal text-center">
                         {props.type}
                     </p>
                 </div>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-b-2">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-amber-300 border-b-2">
                     Deadline: {" "}
                     <p className="ml-1 font-normal text-center">
                         {props.deadline}
                     </p>
                 </div>
-                <div className="bg-gray-200 cursor-pointer flex justify-center font-bold pl-3
+                <div className="bg-amber-300 cursor-pointer flex justify-center border-amber-300 font-bold pl-3
                 text-center border-b-2 rounded-b-xl" onClick={handleMoreInfoClick}>
                     More Information
                 </div>

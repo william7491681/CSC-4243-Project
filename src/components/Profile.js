@@ -44,13 +44,13 @@ export default function Profile() {
     }, []);
 
     return (
-        <div className="bg-gray-600 min-h-screen w-full">
+        <div className="bg-orange-600 min-h-screen w-full">
             {user ?
-            <div className="grid grid-rows-2">
-                <div className="flex flex-col overflow-x-auto items-start">
-                    <p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
+            <div className="grid grid-rows-4">
+                <div className="flex w-full justify-center text-3xl text-opacity-80 text-white">
                         Accepted
-                    </p>
+                    </div>
+                <div className="flex flex-col row-span-4 overflow-x-auto items-start">
                     <div className="grid mt-5 grid-flow-col">
                         { acceptedQuests && acceptedQuests.map((card) => {
                             let id = card.id
@@ -70,10 +70,11 @@ export default function Profile() {
                         })}
                     </div>
                 </div>
-                <div className="flex flex-col overflow-x-auto items-start">
-                    <p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
+                <div><p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
                         Created
-                    </p>
+                    </p></div>
+                <div className="flex flex-col row-span-4 overflow-x-auto items-start">
+                    
                     <div className="grid mt-5 grid-flow-col">
                         { publishedQuests && publishedQuests.map((card) => {
                             let id = card.id
@@ -96,10 +97,10 @@ export default function Profile() {
             </div>
             :
             <div className="flex justify-center flex-col items-center">
-                <h1 className="py-6 text-6xl font-bold">
-                    Sign in to view profile page
+                <h1 className="py-6 ">
+                   
                 </h1>
-                <Link to="/SignUp" className="px-10">SignIn</Link>
+                <Link to="/SignUp" className="px-10 text-6xl font-bold"> Sign in to view profile page</Link>
             </div>}
         </div>
     )

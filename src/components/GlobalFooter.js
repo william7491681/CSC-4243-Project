@@ -43,14 +43,14 @@ export default function GlobalNavbar() {
         <>
         <div>
             
-            <div className="bg-center bg-zinc-300 flex justify-between">
+            <div className="bg-center bg-amber-300 flex justify-between">
             {/* mt-[30px] ml-[20px]  */}
                 
                 
                 <div className = "flex">
                 
                 <nav className="text-[20px] font-bold flex">
-                    <Link to="/ContactUs" className="flex">Contact someone or dial 443-340-3700</Link>
+                    <Link to="/ContactUs" className="flex">Contact someone or dial 555-0157</Link>
                     
                 </nav>
                 </div>
