@@ -41,8 +41,8 @@ export default function ContactUs() {
         <div className="col-10 form-group pt-2 mx-auto pl-3">
           <select name="email" className="form-control border-2 border-spanish bg-beige" label="Email Address" placeholder="" required>
             <option label="Email Address"></option>
-            <option label="Ivar Bega Stem">ivarbegastem@gmail.com</option>
-            <option label="Ravi Stimphil">ravistimphil@gmail.com</option>
+            <option>ivarbegastem@gmail.com</option>
+            <option>ravistimphil@gmail.com</option>
           </select>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">

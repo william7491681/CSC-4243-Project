@@ -51,7 +51,7 @@ export default function Profile() {
                         Accepted
                     </div>
                 <div className="flex flex-col row-span-4 overflow-x-auto items-start">
-                    <div className="grid mt-5 grid-flow-col">
+                    <div className="grid mt-5 grid-flow-col pb-5">
                         { acceptedQuests && acceptedQuests.map((card) => {
                             let id = card.id
                             return (
@@ -70,7 +70,7 @@ export default function Profile() {
                         })}
                     </div>
                 </div>
-                <div><p className="flex w-full justify-center text-3xl text-opacity-80 text-grey-600">
+                <div><p className="flex w-full justify-center text-3xl text-opacity-80 text-grey-600 pb-5">
                         Created
                     </p></div>
                 <div className="flex flex-col row-span-4 overflow-x-auto items-start">

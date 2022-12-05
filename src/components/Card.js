@@ -34,7 +34,7 @@ export default function Card(props) {
     }
 
     return (
-        <div className="w-72 m-4 mt-6 h-[168px] bg-beige lg:max-w-lg shadow-2xl shadow-gray-800 rounded-t-xl rounded-b-xl">
+        <div className="w-72 m-4 mt-6 h-[168px] bg-beige lg:max-w-lg shadow-xl shadow-gray-800 rounded-t-xl rounded-b-xl">
             {!showAccept ?
             // Ternary operator first section
             <div className="text-center text-gray-600 h-full">
@@ -80,7 +80,7 @@ export default function Card(props) {
                 </p>
                 <div className="grid grid-cols-2 mt-auto h-[28px]">
                     <button className="h-[26px] flex bg-silver cursor-pointer font-bold pl-3
-                     rounded-bl-xl hover:bg-silverLight border-silverLight border-b-2" onClick={handleMoreInfoClick}>
+                     rounded-bl-xl hover:bg-silverLight border-silverLight" onClick={handleMoreInfoClick}>
                         Less Information
                     </button>
                     <button onClick={acceptQuest}  className="border-b-2 border-silverLight bg-green-200 hover:bg-green-100 rounded-br-xl font-bold">
