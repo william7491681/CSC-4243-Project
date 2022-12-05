@@ -65,7 +65,7 @@ export default function RequestForm() {
             {user ?
             <form className="fixed h-full w-full backdrop-blur-3xl" onSubmit={sendData}>
                 <div>
-                    <h1 className="py-6 text-6xl font-bold bg-neutral-400">
+                    <h1 className="py-6 text-6xl font-bold bg-spanish">
                         CREATE HELP QUEST
                     </h1>
                 </div>
@@ -91,7 +91,7 @@ export default function RequestForm() {
                     {/* <option value={type}></option> */}
                     <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Math" rows="1" cols="75" className={style.input}></textarea>
                 </div>
-                <button type="submit" className="rounded-xl shadow-lg shadow-black fixed bottom-[150px] right-[50px] w-[300px] bg-neutral-400 cursor-pointer hover:bg-neutral-300 focus:ring focus:ring-blue-ring">
+                <button type="submit" className="rounded-xl shadow-lg shadow-black fixed bottom-[150px] right-[50px] w-[300px] bg-spanish cursor-pointer hover:bg-spanishLight focus:ring focus:ring-blue-ring">
                     <div className="flex jusitify-center">
                         <CheckIcon className="h-[60px] self-center place-self-center stroke-green-600"/>
                         <h1 className ="text-[30px] self-center ml-11">SUBMIT</h1>

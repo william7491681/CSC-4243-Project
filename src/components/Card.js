@@ -34,39 +34,39 @@ export default function Card(props) {
     }
 
     return (
-        <div className="w-72 m-4 mt-6 h-[168px] bg-slate-100 lg:max-w-lg shadow-2xl shadow-gray-800 rounded-t-xl rounded-b-xl">
+        <div className="w-72 m-4 mt-6 h-[168px] bg-beige lg:max-w-lg shadow-2xl shadow-gray-800 rounded-t-xl rounded-b-xl">
             {!showAccept ?
             // Ternary operator first section
             <div className="text-center text-gray-600 h-full">
-                <h3 className="text-black text-2xl h-16 font-bold bg-zinc-300 overflow-y-auto overflow-x-hidden rounded-t-xl">
+                <h3 className="text-black text-2xl h-16 font-bold bg-silver overflow-y-auto overflow-x-hidden rounded-t-xl">
                     {props.title}
                 </h3>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-zinc-300 border-b-2 h-[26px]">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-silver border-b-2 h-[26px]">
                     Completion Time: {" "}
                     <p className="ml-1 font-normal flex justify-center text-center overflow-auto">
                         {props.time}
                     </p>
                 </div>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-zinc-300 border-b-2">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-silver border-b-2">
                     Quest Category: {" "}
                     <p className="ml-1 font-normal text-center">
                         {props.type}
                     </p>
                 </div>
-                <div className="grid font-bold pl-3 grid-cols-2 text-left border-zinc-300 border-b-2">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left border-silver border-b-2">
                     Deadline: {" "}
                     <p className="ml-1 font-normal text-center">
                         {props.deadline}
                     </p>
                 </div>
-                <div className="bg-zinc-300 hover:bg-zinc-200 cursor-pointer flex justify-center border-zinc-300 font-bold pl-3
+                <div className="bg-silver hover:bg-silverLight cursor-pointer flex justify-center border-silver font-bold pl-3
                 text-center border-b-2 rounded-b-xl" onClick={handleMoreInfoClick}>
                     More Information
                 </div>
             </div> :
             // Ternary operator second section
             <div className="flex flex-col text-center text-gray-600 h-full">
-                <div className="grid font-bold pl-3 grid-cols-2 text-left mb-0 border-b-2 border-zinc-300">
+                <div className="grid font-bold pl-3 grid-cols-2 text-left mb-0 border-b-2 border-silver">
                     Quest Creator: {" "}
                     <p className="ml-1 font-normal">
                         {props.creator}
@@ -79,11 +79,11 @@ export default function Card(props) {
                     {props.description}
                 </p>
                 <div className="grid grid-cols-2 mt-auto h-[28px]">
-                    <button className="h-[26px] flex bg-zinc-300 cursor-pointer font-bold pl-3
-                     rounded-bl-xl hover:bg-zinc-200" onClick={handleMoreInfoClick}>
+                    <button className="h-[26px] flex bg-silver cursor-pointer font-bold pl-3
+                     rounded-bl-xl hover:bg-silverLight border-silverLight border-b-2" onClick={handleMoreInfoClick}>
                         Less Information
                     </button>
-                    <button onClick={acceptQuest}  className="border-b-2 border-slate-100 bg-green-200 hover:bg-green-100 rounded-br-xl font-bold">
+                    <button onClick={acceptQuest}  className="border-b-2 border-silverLight bg-green-200 hover:bg-green-100 rounded-br-xl font-bold">
                         Accept Quest
                     </button>
                 </div>

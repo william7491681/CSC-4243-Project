@@ -43,7 +43,7 @@ export default function GlobalNavbar() {
         <>
         <div>
             
-            <div className="bg-center bg-zinc-300 flex justify-between">
+            <div className="bg-center bg-spanish flex justify-between">
             {/* mt-[30px] ml-[20px]  */}
                 
                 

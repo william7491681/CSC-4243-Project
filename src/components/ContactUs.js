@@ -24,7 +24,7 @@ export default function ContactUs() {
           e.target.reset()
       }
     return (
-       <div className="bg-yellow-200 min-h-screen w-full">
+       <div className="bg-dusty min-h-screen w-full">
         {user ?
         <div>
        <div>
@@ -36,23 +36,23 @@ export default function ContactUs() {
     <form onSubmit={sendEmail}>
       <div className="row pt-5 mx-auto">
         <div className="col-10 form-group mx-auto pl-3">
-          <input type="text" className="form-control border-2 border-neutral-500 bg-slate-100" placeholder="Your Name" name="name" required></input>
+          <input type="text" className="form-control border-2 border-spanish bg-beige" placeholder="Your Name" name="name" required></input>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <select name="email" className="form-control border-2 border-neutral-500 bg-slate-100" label="Email Address" placeholder="" required>
+          <select name="email" className="form-control border-2 border-spanish bg-beige" label="Email Address" placeholder="" required>
             <option label="Email Address"></option>
             <option label="Ivar Bega Stem">ivarbegastem@gmail.com</option>
             <option label="Ravi Stimphil">ravistimphil@gmail.com</option>
           </select>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <input type="text" className="form-control border-2 border-neutral-500 bg-slate-100" placeholder="Subject" name="subject" required></input>
+          <input type="text" className="form-control border-2 border-spanish bg-beige" placeholder="Subject" name="subject" required></input>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <textarea className="form-control border-2 border-neutral-500 bg-slate-100" id="" cols="30" rows="8" placeholder="Your message" name="message" required></textarea>
+          <textarea className="form-control border-2 border-spanish bg-beige" id="" cols="30" rows="8" placeholder="Your message" name="message" required></textarea>
         </div>
         <div className="col-10 pt-3 mx-auto p-3">
-          <input type="submit" className="btn btn-info cursor-pointer bg-neutral-500 p-3 hover:bg-neutral-300" value="Send Message" ></input>
+          <input type="submit" className="btn btn-info cursor-pointer bg-spanish p-3 hover:bg-spanishLight" value="Send Message" ></input>
         </div>
       </div>
     </form>

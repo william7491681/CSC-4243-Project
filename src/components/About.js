@@ -1,7 +1,7 @@
 export default function About() {
 
     return (
-       <div className="bg-yellow-200 min-h-screen w-full">
+       <div className="bg-dusty min-h-screen w-full">
         <h1>
             Help Quest is a website where you can go to the homepage to 
             ask for a request, and then wait for someone to answer. 

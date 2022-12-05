@@ -44,7 +44,7 @@ export default function Profile() {
     }, []);
 
     return (
-        <div className="bg-yellow-200 min-h-screen w-full">
+        <div className="bg-dusty min-h-screen w-full">
             {user ?
             <div className="grid grid-rows-4">
                 <div className="flex w-full justify-center text-3xl text-opacity-80 text-grat-600">
