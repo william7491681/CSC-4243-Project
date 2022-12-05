@@ -17,7 +17,7 @@ export default function RequestForm() {
 
     const style = {
         input : "my-0 p-0 w-auto text-lg shadow-lg shadow-black placeholder-black placeholder-opacity-70 resize-none",
-        label : "text-3xl text-yellow-100 font-semibold mt-5"
+        label : "text-3xl text-slate-100 font-semibold mt-5"
     }
 
     const [user] = useAuthState(auth);
@@ -65,7 +65,7 @@ export default function RequestForm() {
             {user ?
             <form className="fixed h-full w-full backdrop-blur-3xl" onSubmit={sendData}>
                 <div>
-                    <h1 className="py-6 text-6xl font-bold bg-amber-400">
+                    <h1 className="py-6 text-6xl font-bold bg-neutral-400">
                         CREATE HELP QUEST
                     </h1>
                 </div>
@@ -91,7 +91,7 @@ export default function RequestForm() {
                     {/* <option value={type}></option> */}
                     <textarea value={type} required onChange={(e) => {setType(e.target.value)}}  placeholder="Math" rows="1" cols="75" className={style.input}></textarea>
                 </div>
-                <button type="submit" className="rounded-xl shadow-lg shadow-black fixed bottom-[150px] right-[50px] w-[300px] bg-amber-400 cursor-pointer hover:bg-amber-300 focus:ring focus:ring-blue-ring">
+                <button type="submit" className="rounded-xl shadow-lg shadow-black fixed bottom-[150px] right-[50px] w-[300px] bg-neutral-400 cursor-pointer hover:bg-neutral-300 focus:ring focus:ring-blue-ring">
                     <div className="flex jusitify-center">
                         <CheckIcon className="h-[60px] self-center place-self-center stroke-green-600"/>
                         <h1 className ="text-[30px] self-center ml-11">SUBMIT</h1>
@@ -102,7 +102,8 @@ export default function RequestForm() {
             </form> :
             <div className="grid grid-rows-2 text-center content-center h-full w-full backdrop-blur-3xl">
                 
-                <Link to="/SignUp" className="px-10 py-10 text-6xl font-bold ">Sign in to create Help Quest</Link>
+                <div className="px-10 py-10 text-6xl font-bold ">Sign in to create Help Quest</div>
+                <GoogleButton className="justify-self-center" onClick={googleSignIn}/>
             </div>
 }
         </div>

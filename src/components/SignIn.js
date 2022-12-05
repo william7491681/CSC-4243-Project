@@ -12,7 +12,6 @@ export default function SignIn() {
     return (
         <div className="flex justify-center">
             <GoogleButton onClick={googleSignIn}/>
-            <ContactUs/>
         </div>
     )
 }

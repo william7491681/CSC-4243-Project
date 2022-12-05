@@ -44,10 +44,10 @@ export default function Profile() {
     }, []);
 
     return (
-        <div className="bg-orange-600 min-h-screen w-full">
+        <div className="bg-yellow-200 min-h-screen w-full">
             {user ?
             <div className="grid grid-rows-4">
-                <div className="flex w-full justify-center text-3xl text-opacity-80 text-white">
+                <div className="flex w-full justify-center text-3xl text-opacity-80 text-grat-600">
                         Accepted
                     </div>
                 <div className="flex flex-col row-span-4 overflow-x-auto items-start">
@@ -70,7 +70,7 @@ export default function Profile() {
                         })}
                     </div>
                 </div>
-                <div><p className="flex w-full justify-center text-3xl text-opacity-80 text-white">
+                <div><p className="flex w-full justify-center text-3xl text-opacity-80 text-grey-600">
                         Created
                     </p></div>
                 <div className="flex flex-col row-span-4 overflow-x-auto items-start">
@@ -100,7 +100,8 @@ export default function Profile() {
                 <h1 className="py-6 ">
                    
                 </h1>
-                <Link to="/SignUp" className="px-10 text-6xl font-bold"> Sign in to view profile page</Link>
+                <div className="px-10 pb-4 text-6xl font-bold"> Sign in to view profile page</div>
+                <GoogleButton onClick={googleSignIn}/>
             </div>}
         </div>
     )

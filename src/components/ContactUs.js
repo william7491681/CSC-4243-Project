@@ -1,8 +1,17 @@
 import emailjs from "emailjs-com";
+import { useAuthState } from "react-firebase-hooks/auth"
+import { auth, db } from "../firebase"
+import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import GoogleButton from "react-google-button"
 
 
+const googleSignIn = () => {
+  const provider = new GoogleAuthProvider()
+  signInWithRedirect(auth, provider)
+}
 
 export default function ContactUs() {
+  const [user] = useAuthState(auth);
     function sendEmail(e){
         e.preventDefault();
     
@@ -15,9 +24,11 @@ export default function ContactUs() {
           e.target.reset()
       }
     return (
-       <div className="bg-orange-600">
+       <div className="bg-yellow-200 min-h-screen w-full">
+        {user ?
+        <div>
        <div>
-        <h1 className ="text-yellow-100">
+        <h1 className ="">
             Contact the people you accepted.
         </h1>
        </div>
@@ -25,27 +36,34 @@ export default function ContactUs() {
     <form onSubmit={sendEmail}>
       <div className="row pt-5 mx-auto">
         <div className="col-10 form-group mx-auto pl-3">
-          <input type="text" className="form-control border-2 border-amber-500 bg-yellow-100" placeholder="Your Name" name="name" required></input>
+          <input type="text" className="form-control border-2 border-neutral-500 bg-slate-100" placeholder="Your Name" name="name" required></input>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <select name="email" className="form-control border-2 border-amber-500 bg-yellow-100" label="Email Address" placeholder="" required>
+          <select name="email" className="form-control border-2 border-neutral-500 bg-slate-100" label="Email Address" placeholder="" required>
             <option label="Email Address"></option>
             <option label="Ivar Bega Stem">ivarbegastem@gmail.com</option>
             <option label="Ravi Stimphil">ravistimphil@gmail.com</option>
           </select>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <input type="text" className="form-control border-2 border-amber-500 bg-yellow-100" placeholder="Subject" name="subject" required></input>
+          <input type="text" className="form-control border-2 border-neutral-500 bg-slate-100" placeholder="Subject" name="subject" required></input>
         </div>
         <div className="col-10 form-group pt-2 mx-auto pl-3">
-          <textarea className="form-control border-2 border-amber-500 bg-yellow-100" id="" cols="30" rows="8" placeholder="Your message" name="message" required></textarea>
+          <textarea className="form-control border-2 border-neutral-500 bg-slate-100" id="" cols="30" rows="8" placeholder="Your message" name="message" required></textarea>
         </div>
         <div className="col-10 pt-3 mx-auto p-3">
-          <input type="submit" className="btn btn-info cursor-pointer bg-amber-500 p-3 hover:bg-amber-300" value="Send Message" ></input>
+          <input type="submit" className="btn btn-info cursor-pointer bg-neutral-500 p-3 hover:bg-neutral-300" value="Send Message" ></input>
         </div>
       </div>
     </form>
-    </div>
+    </div> </div>:
+    <div className="flex justify-center flex-col items-center">
+    <h1 className="py-6 ">
+       
+    </h1>
+    <div className="px-10 pb-4 text-6xl font-bold"> Sign in to view contact page</div>
+    <GoogleButton onClick={googleSignIn}/>
+</div>}
        </div>
        
        

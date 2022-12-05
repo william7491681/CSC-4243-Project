@@ -32,7 +32,7 @@ export default function LandingPage() {
     }
 
     return (
-        <div className="bg-orange-600 min-h-screen h-full">
+        <div className="bg-yellow-200 min-h-screen h-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 { cards && cards.map((card) => {
                     let id = card.id
@@ -56,8 +56,8 @@ export default function LandingPage() {
             </div>
             {showRequestForm && <RequestForm />}
             <div className="flex rounded-xl shadow-lg shadow-black
-            fixed bottom-[50px] right-[50px] w-[300px] bg-amber-400 cursor-pointer
-            hover:bg-amber-300"
+            fixed bottom-[50px] right-[50px] w-[300px] bg-neutral-400 cursor-pointer
+            hover:bg-neutral-300"
             onClick={handleCreateQuestClick}>
                 {!showRequestForm ?
                 <PencilAltIcon className="h-[60px] self-center place-self-center" />:
