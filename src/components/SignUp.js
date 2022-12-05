@@ -40,9 +40,9 @@ export default function SignUp() {
   }, []);
     
     return (
-      <div>
+      <div className="min-h-screen w-full bg-yellow-100">
         {!user ?
-      <div className="bg-yellow-100">
+      <div className="">
         {!first ? <></> : <GoogleButton onClick={() =>{googleSignIn()}}/>  }
         <div>
           <input type="checkbox" value={first} onChange={()=>handleChange("first")}/> Agree to the terms and agreements before signing in
